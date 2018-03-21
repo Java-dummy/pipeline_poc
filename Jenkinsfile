@@ -1,10 +1,10 @@
 pipeline { 
     agent any  
-    stages { 
-        stage('Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
-            }
-        }
-    }
+		stages {
+			stage('compile') {
+				steps {
+					sh 'mvn clean cobertura:cobertura -Dcobertura.report.format=xm'
+					   }
+				}
+			}
 }
