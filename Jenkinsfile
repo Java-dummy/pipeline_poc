@@ -9,7 +9,7 @@ node () {
 	}
 	stage ('Test-hard - Build') {
  			// Shell build step
-sh """ 
+bat """ 
 mvn clean cobertura:cobertura -Dcobertura.report.format=xml 
  """ 
 	}
