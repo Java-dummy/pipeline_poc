@@ -21,7 +21,7 @@ pipeline {
 		stage ('Sonar') {
 			steps {
 				withMaven(maven : 'Maven3.5.3') {
-				bat 'mvn package sonar:sonar -Dsonar.login=dummy0301@github -Dsonar.password=zxcv0987 -Dsonar.host.url=https://sonarcloud.io'
+				bat 'mvn package sonar:sonar -Dsonar.login=ee9d33d16c94feac8977ef6f8798e769a35c63ab -Dsonar.host.url=https://sonarcloud.io'
 				}
 			    }
 			}
