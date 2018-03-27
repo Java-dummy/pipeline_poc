@@ -8,6 +8,13 @@ pipeline {
 				}
 			    }
 			}
+		stage ('compile') {
+			steps {
+				withMaven(maven : 'Maven3.5.3') {
+				bat 'mvn package sonar:sonar -Dsonar.host.url=https://sonarcloud.io'
+				}
+			    }
+			}
 		stage ('Coverage') {
 			steps {
 				withMaven(maven : 'Maven3.5.3') {
