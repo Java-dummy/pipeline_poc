@@ -8,7 +8,7 @@ pipeline {
 				}
 			    }
 			}
-		stage ('compile') {
+		stage ('Sonar') {
 			steps {
 				withMaven(maven : 'Maven3.5.3') {
 				bat 'mvn package sonar:sonar -Dsonar.host.url=https://sonarcloud.io'
