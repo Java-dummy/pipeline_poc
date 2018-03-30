@@ -19,7 +19,7 @@ pipeline {
 			    }
 			}
 		stage ('SCP')
-			node {
+			steps {
 				sshagent(['192.168.1.10']) {
 				sh 'scp pom.xml 192.168.1.10:/tmp/'
 					} 
