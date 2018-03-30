@@ -18,5 +18,15 @@ pipeline {
 				}
 			    }
 			}
+		stage('ssh-agent'){
+
+           script {
+  
+                sshagent (credentials: ['192.168.1.10']) {
+                sh 'scp -o StrictHostKeyChecking=no pom.xml 192.168.1.10:/tmp/'
+                }
+           }
+
+		}
 	}
 }
